@@ -19,29 +19,10 @@ const poolConfig = {
 const pool = new Pool(poolConfig);
 
 const getTasks = async (request: Request, response: Response) => {
-    // pool.query('SELECT * FROM tasks', (error, results) => {
-    //     if (error) {
-    //         throw error
-    //     }
-
-    //     response.status(200).json(results.rows)
-    // })
-
     const results = await pool.query('SELECT * FROM tasks')
 
     response.statusCode = 200
     return response.status(200).json(results.rows)
-    // let tasks = {
-    //     tasks: [
-    //         {
-    //             id: '38a46a99-972f-453b-bbf5-c5ce74738a10',
-    //             title: 'deneme1',
-    //             updatedAt: '2021-09-30 10:03:24.064484+00'
-    //         }
-    //     ]
-    // }
-    // response.statusCode = 200;
-    // response.send(tasks)
 }
 
 const createTask = (request: Request, response: Response) => {
