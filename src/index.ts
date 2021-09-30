@@ -1,8 +1,6 @@
 import express, { Request, Response } from "express";
 import db from 'db'
 import bodyParser from 'body-parser'
-
-import getAllUsers from './routes/getAllUsers';
 import repositoryTask from "repositoryTask";
 import repositoryTaskList from "repositoryTaskList";
 import repositoryTaskListRel from "repositoryTaskListRel";
